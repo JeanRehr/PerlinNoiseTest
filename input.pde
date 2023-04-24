@@ -6,7 +6,11 @@ boolean wPressed = false;
 boolean aPressed = false;
 boolean sPressed = false;
 boolean dPressed = false;
+boolean qPressed = false;
+boolean ePressed = false;
 boolean paused;
+
+float z = 0;
 
 void keyPressed() {
   if (keyCode == UP) {
@@ -30,6 +34,13 @@ void keyPressed() {
   }
   if (key == 'd') {
     dPressed = true;
+  }
+
+  if (key == 'q') {
+    qPressed = true;
+  }
+  if (key == 'e') {
+    ePressed = true;
   }
 
   if (key == ENTER || key == RETURN) {
@@ -67,6 +78,13 @@ void movement() {
   if (dPressed) {
     camY -= 0.01;
   }
+  
+  if (qPressed) {
+    camZ += 0.01;
+  }
+  if (ePressed) {
+    camZ -= 0.01;
+  }
 }
 
 
@@ -91,5 +109,12 @@ void keyReleased() {
   }
   if (key == 'd') {
     dPressed = false;
+  }
+
+  if (key == 'q') {
+    qPressed = false;
+  }
+  if (key == 'e') {
+    ePressed = false;
   }
 }

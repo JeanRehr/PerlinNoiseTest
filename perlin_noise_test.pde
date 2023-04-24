@@ -20,6 +20,7 @@ float speedX = 0;
 float speedY = 0;
 float camX = 0;
 float camY = 0;
+float camZ = 0;
 
 float[][] mounds;
 
@@ -36,14 +37,16 @@ void setup() {
   mounds = new float[cols][rows];
 }
 
+
 void draw() {
+  
   movement();
 
   yoff = speedY;
   for (int y = 0; y < rows; y++) {
     xoff = speedX;
     for (int x = 0; x < cols; x++) {
-      mounds[x][y] = map(noise(xoff, yoff), 0, 1, -10, 70);
+      mounds[x][y] = map(noise(xoff, yoff), 0, 1, -10, 50);
       xoff += 0.2;
     }
     yoff += 0.2;
@@ -54,7 +57,7 @@ void draw() {
   noFill();
 
   translate(screen_width/2, screen_height/2+50);
-
+  rotateZ(camZ);
   rotateX(PI/3 + camX);
   rotateY(camY);
   
