@@ -13,8 +13,8 @@ int terrain_height = 2000;
 int screen_width = 1000;
 int screen_height = 1000;
 
-float xoff = random(10);
-float yoff = random(10);
+float xoff = 0;
+float yoff = 0;
 
 float speedX = 0;
 float speedY = 0;
